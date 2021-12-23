@@ -1,0 +1,98 @@
+/*-------------------------------VARIABLES---------------------------*/
+/*-------------------------------FONTS---------------------------*/
+@font-face {
+  font-family: "Shrikhand";
+  src: url("fonts.googleapis.com/css?family=Shrikhand") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts.googleapis.com/css?family=Roboto") format("truetype");
+}
+@media screen and (max-width: 768px) {
+  .head-container {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+  .head-container .head-title {
+    font-size: 150%;
+    font-weight: bold;
+  }
+
+  .localization-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 10px;
+    background-color: #c7c7c7;
+    padding: 20px;
+  }
+
+  .int-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    padding: 0px 30px 0px 30px;
+    row-gap: 20px;
+    background-color: #e6e6e6;
+  }
+  .int-container .main-text {
+    padding: 0px 30px 0px 30px;
+    font-size: 150%;
+    font-weight: bold;
+  }
+  .int-container .sub-text {
+    padding: 0px 20px 0px 20px;
+  }
+  .int-container .btn {
+    background-color: #FF79DA;
+    padding: 20px 20px 20px 20px;
+    border-radius: 20px;
+    font-size: 125%;
+  }
+
+  .how-it-works-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-top: 20px;
+    row-gap: 15px;
+  }
+  .how-it-works-container .head-title {
+    font-size: 150%;
+    font-weight: bold;
+  }
+  .how-it-works-container .step-card {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0px 20px 0px;
+    margin-right: 10px;
+    background-color: lightgray;
+    border-radius: 10px;
+  }
+  .how-it-works-container .step-card .number {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: -10px;
+    background-color: #FF79DA;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  .how-it-works-container .step-card .mobile-icon {
+    margin-left: 20px;
+    margin-right: 20px;
+    color: gray;
+  }
+  .how-it-works-container .step-card .action {
+    font-weight: bold;
+  }
+}
+/*-------------------------------    ---------------------------*/
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,105 @@
+/*-------------------------------VARIABLES---------------------------*/
+$primary-color:#9356DC;
+$secondary-color:#FF79DA;
+$ternary-color:#99E2D0;
+/*-------------------------------FONTS---------------------------*/
+@font-face {
+    font-family: 'Shrikhand';
+    src: url("fonts.googleapis.com/css?family=Shrikhand") format('truetype');
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url("fonts.googleapis.com/css?family=Roboto") format('truetype');
+}
+@media screen and (max-width : 768px) {
+    @mixin horizontal-flexbox {
+        display: flex;
+        flex-direction: row;
+      }
+    @mixin vertical-flexbox {
+        display: flex;
+        flex-direction: column;
+      }
+
+    .head-container{
+        @include horizontal-flexbox();
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        
+        .head-title{
+            font-size: 150%;
+            font-weight: bold;
+        }
+    }
+
+    .localization-container{
+        @include horizontal-flexbox();
+        justify-content: center;
+        column-gap: 10px;
+        background-color: rgb(199, 199, 199);
+        padding: 20px
+    }
+    .int-container{
+        @include vertical-flexbox();
+        align-items: center;
+        justify-content: center;
+        height: 250px;
+        padding: 0px 30px 0px 30px;
+        row-gap: 20px;
+        background-color: rgb(230, 230, 230);
+        .main-text{
+            padding: 0px 30px 0px 30px;
+            font-size: 150%;
+            font-weight: bold;
+        }
+        .sub-text{
+            padding: 0px 20px 0px 20px;
+            
+        }
+        .btn{
+            background-color: $secondary-color;
+            padding: 20px 20px 20px 20px;
+            border-radius: 20px;
+            font-size: 125%;
+        }
+    }
+
+    .how-it-works-container{
+        @include vertical-flexbox();
+        margin-left: 20px;
+        margin-top: 20px;
+        row-gap: 15px;
+
+        .head-title{
+            font-size: 150%;
+            font-weight: bold;
+        }
+        .step-card{
+            @include horizontal-flexbox();
+            padding: 20px 0px 20px 0px;
+            margin-right: 10px;
+            background-color: lightgray;
+            border-radius: 10px;
+            .number{      
+                @include horizontal-flexbox();     
+                justify-content: center;     
+                margin-left: -10px;
+                background-color: $secondary-color;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+            }
+            .mobile-icon{
+                margin-left: 20px;
+                margin-right: 20px ;
+                color: gray
+            }
+            .action{
+                font-weight: bold;
+            }
+        }
+        
+    }
+}
+/*-------------------------------    ---------------------------*/
