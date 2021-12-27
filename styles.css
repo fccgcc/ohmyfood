@@ -14,11 +14,12 @@
     flex-direction: row;
     height: 50px;
     justify-content: center;
-    align-items: center;
   }
   .head-container .head-title {
-    font-size: 150%;
-    font-weight: bold;
+    background-repeat: no-repeat;
+    background-image: url("./images/logo/ohmyfood.png");
+    background-size: contain;
+    width: 50%;
   }
 
   .localization-container {
@@ -30,7 +31,7 @@
     padding: 20px;
   }
 
-  .int-container {
+  .introduction-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,15 +41,15 @@
     row-gap: 20px;
     background-color: #e6e6e6;
   }
-  .int-container .main-text {
+  .introduction-container .main-text {
     padding: 0px 30px 0px 30px;
     font-size: 150%;
     font-weight: bold;
   }
-  .int-container .sub-text {
+  .introduction-container .sub-text {
     padding: 0px 20px 0px 20px;
   }
-  .int-container .btn {
+  .introduction-container .btn {
     background-color: #FF79DA;
     padding: 20px 20px 20px 20px;
     border-radius: 20px;
@@ -73,6 +74,7 @@
     margin-right: 10px;
     background-color: lightgray;
     border-radius: 10px;
+    box-shadow: 3px 3px 3px gray;
   }
   .how-it-works-container .step-card .number {
     display: flex;
@@ -92,7 +94,106 @@
   .how-it-works-container .step-card .action {
     font-weight: bold;
   }
+
+  .restaurants {
+    height: auto;
+    margin-top: 50px;
+    padding-bottom: 50px;
+    background-color: lightgray;
+  }
+  .restaurants .inner-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    row-gap: 10px;
+  }
+  .restaurants .inner-container .head-title {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    font-size: 150%;
+    font-weight: bold;
+  }
+  .restaurants .inner-container .menu-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .restaurants .inner-container .menu-card .menu-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 200px;
+    border-radius: 30px 30px 0px 0px;
+  }
+  .restaurants .inner-container .menu-card .description-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border-radius: 0px 0px 30px 30px;
+  }
+  .restaurants .inner-container .menu-card .description-container .description {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+  .restaurants .inner-container .menu-card .description-container .description .restaurant-name {
+    font-size: 125%;
+    font-weight: bold;
+  }
+  .restaurants .inner-container .menu-card .description-container .description .restaurant-loc {
+    font-size: 125%;
+  }
+  .restaurants .inner-container .menu-card .description-container .heart-icon {
+    padding-top: 10px;
+    padding-right: 15px;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    background-color: darkgray;
+  }
+  .footer .logo {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100px;
+    height: 20px;
+    background-image: url("./images/logo/ohmyfood.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .footer .img-text {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    margin-left: 20px;
+    margin-top: 5px;
+  }
+  .footer .raw-text {
+    margin-left: 20px;
+    margin-top: 5px;
+  }
 }
-/*-------------------------------    ---------------------------*/
+/*-------------------------------IMAGES---------------------------*/
+.restaurant-image1 {
+  background-image: url("./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+}
+
+.restaurant-image2 {
+  background-image: url("./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+}
+
+.restaurant-image3 {
+  background-image: url("./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+}
+
+.restaurant-image4 {
+  background-image: url("./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+}
 
 /*# sourceMappingURL=styles.css.map */
