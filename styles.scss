@@ -36,14 +36,14 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
 
     .head-container{
         @include horizontal-flexbox();
-        height: 40px;
+        height: 70px;
         justify-content: center;
         
         .head-title{
             background-repeat: no-repeat;
             background-image :url($logo-img) ;
             background-size: contain;
-            width:50%;
+            width:20%;
         }
         .back-arrow{
             position: absolute;
@@ -81,17 +81,18 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
           @include button-properties();
         }
     }
-
+    .head-title{
+        font-size: 150%;
+        font-weight: bold;
+        margin-top: 20px; margin-left: 20px
+    }
     .how-it-works-container{
         @include vertical-flexbox();
         margin-left: 20px;
         margin-top: 20px;
         row-gap: 15px;
 
-        .head-title{
-            font-size: 150%;
-            font-weight: bold;
-        }
+        
         .step-card{
             @include horizontal-flexbox();
             padding: 20px 0px 20px 0px;
@@ -125,16 +126,291 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
         margin-top: 50px;
         padding-bottom: 50px;
         background-color: lightgray;
+        .head-title{
+            padding-top: 30px; padding-bottom: 10px;
+            font-size: 150%;  font-weight: bold;
+            
+            
+        }
         .inner-container{ 
             @include vertical-flexbox();
             margin-left: 20px;  margin-right: 20px;
             row-gap: 10px;
-            .head-title{
-                padding-top: 30px; padding-bottom: 10px;
-                font-size: 150%;  font-weight: bold;
-            }
+            
             .menu-card{
                 @include vertical-flexbox();
+
+                .menu-img{
+                    background-size: cover; background-repeat: no-repeat;
+                    height: 200px;
+                    border-radius: 30px 30px 0px 0px  ;
+                }
+
+                .description-container{
+                    @include horizontal-flexbox();
+                    justify-content: space-between;
+                    background-color: white;
+                    padding-left: 15px ; padding-top: 10px; padding-bottom: 15px;
+                    border-radius: 0px 0px 30px 30px ;
+                    .description{
+                        @include vertical-flexbox();
+                        row-gap: 5px;
+                        .restaurant-name{
+                            font-size: 125%; font-weight: bold;
+                        }
+                        .restaurant-loc{
+                            font-size: 125%;
+                        }
+
+                    }
+                    .heart-icon{
+                        padding-top: 10px; padding-right: 15px;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    /*-------------------------------MENU-SPECIFIC CSS---------------------------*/
+    .menu{
+        .menu-img{
+            background-size: cover; background-repeat: no-repeat;
+            height: 200px
+        }
+        .detailed-menu-container{
+            margin-top: -40px;
+            background-color: lightgray;
+            border-radius: 40px 40px 0px 0px;
+            height:auto;
+
+            .inner-container{ 
+                @include vertical-flexbox();
+                margin-left: 10px;
+                margin-right: 10px;
+                .menu-head-container{
+                    @include horizontal-flexbox();
+                    justify-content: space-between;
+                    border-radius: 0px 0px 30px 30px ;
+                    margin-bottom: 20px;
+                    .menu-name{
+                        font-size: 150%;font-weight: bold;
+                        margin-top: 25px;
+                    }
+                    .heart-icon{
+                        margin-top: 30px; margin-right:30px
+                    }
+                }
+
+                .menu-subdiv-text{}      //fixed underline length
+                .menu-subdiv-text:after{
+                    content: ""; display: block; width: 20%; border-bottom: solid 5px; 
+                    border-color: $ternary-color;
+                }
+
+                .menu-subdiv{   /*TODO*/   /*utiliser pseudo-classes et structure de controle pour afficher croix verte */
+                    @include vertical-flexbox();
+                    margin-top: 5px;
+                    row-gap: 5px;
+                    .menu-item{
+                        background-color: white;
+                        padding: 10px;
+                        border-radius: 15px;
+                        width: auto;
+                        @include vertical-flexbox();
+                        &:hover{
+                            animation-duration: 5s;
+                            animation-name: animtest;
+                        }
+                        .item-name{
+                            font-weight: bold;
+                        }
+                        .item-desc{
+                            @include horizontal-flexbox();
+                            justify-content: space-between;
+                        }
+                    }
+                   
+                    
+
+                }
+                .btn{
+                    @include button-properties();
+                    width: 100px;
+                    align-self: center;
+                    margin-bottom: 50px;
+                   
+                  }
+
+
+
+
+
+
+            }            
+       }
+    }
+    
+    .footer{
+        @include vertical-flexbox();
+        height: 200px;
+        background-color: darkgray;
+        .logo{
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 100px;
+            height: 20px;
+            background-image: url($logo-img);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .img-text{
+            @include horizontal-flexbox();
+            column-gap: 10px;
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+        .raw-text{
+            margin-left: 20px;
+            margin-top: 5px;
+
+        }
+
+
+    }
+}
+// desktop
+@media screen and (min-width :992px) {
+    @mixin horizontal-flexbox {
+        display: flex;
+        flex-direction: row;
+      }
+    @mixin vertical-flexbox {
+        display: flex;
+        flex-direction: column;
+      }
+    @mixin button-properties{
+        background-color: $secondary-color;
+        padding: 20px 20px 20px 20px;
+        border-radius: 20px;
+        font-size: 125%;
+    }
+
+    .head-container{
+        @include horizontal-flexbox();
+        height: 70px;
+        justify-content: center;
+        
+        .head-title{
+            background-repeat: no-repeat;
+            background-image :url($logo-img) ;
+            background-size: contain;
+            width: 10%;
+            
+            
+            
+
+        }
+        .back-arrow{
+            position: absolute;
+            left: 10px;
+            top: 15px;
+        }
+
+    }
+
+    .localization-container{
+        @include horizontal-flexbox();
+        justify-content: center;
+        column-gap: 10px;
+        background-color: rgb(199, 199, 199);
+        padding: 20px
+    }
+    .introduction-container{
+        @include vertical-flexbox();
+        align-items: center;
+        justify-content: center;
+        height: 250px;
+        padding: 0px 30px 0px 30px;
+        row-gap: 20px;
+        background-color: rgb(230, 230, 230);
+        .main-text{
+            padding: 0px 30px 0px 30px;
+            font-size: 150%;
+            font-weight: bold;
+        }
+        .sub-text{
+            padding: 0px 20px 0px 20px;
+            
+        }
+        .btn{
+          @include button-properties();
+        }
+    }
+    .head-title{
+        font-size: 150%;
+        font-weight: bold;
+        margin-left: 20px;
+        margin-top :  20px
+    }
+    .how-it-works-container{
+        @include horizontal-flexbox();
+        margin-left: 20px;
+        margin-top: 20px;
+        row-gap: 15px;
+        justify-content: space-around;
+
+        
+        .step-card{
+            @include horizontal-flexbox();
+            width: 400px;
+            padding: 20px 0px 20px 0px;
+            margin-right: 10px;
+            background-color: lightgray;
+            border-radius: 10px;
+            box-shadow: 3px 3px 3px gray;
+            .number{      
+                @include horizontal-flexbox();     
+                justify-content: center;     
+                margin-left: -10px;
+                background-color: $secondary-color;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+            }
+            .mobile-icon{
+                margin-left: 20px;
+                margin-right: 20px ;
+                color: gray
+            }
+            .action{
+                font-weight: bold;
+            }
+        }
+        
+    }
+
+    .restaurants{
+        height: auto;
+        margin-top: 50px;
+        padding-bottom: 50px;
+        background-color: lightgray;
+        .head-title{
+            padding-top: 30px; padding-bottom: 10px;
+            font-size: 150%;  font-weight: bold;
+            margin-left: 20px;
+        }
+        .inner-container{ 
+            @include horizontal-flexbox();
+            margin-left: 20px;  margin-right: 20px;
+            column-gap: 20px;
+            row-gap: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .menu-card{
+                @include vertical-flexbox();
+                width:300px;
 
                 .menu-img{
                     background-size: cover; background-repeat: no-repeat;
@@ -249,7 +525,7 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
 
     .footer{
         @include vertical-flexbox();
-        height: 300px;
+        height: 200px;
         background-color: darkgray;
         .logo{
             margin-left: 20px;
@@ -276,6 +552,7 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
 
     }
 }
+
 /*-------------------------------IMAGES---------------------------*/
 .restaurant-image1{
     background-image: url($image-1);    
