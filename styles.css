@@ -198,6 +198,8 @@
     border-color: #99E2D0;
   }
   .menu .detailed-menu-container .inner-container .menu-subdiv {
+    /*TODO*/
+    /*utiliser pseudo-classes et structure de controle pour afficher croix verte */
     display: flex;
     flex-direction: column;
     margin-top: 5px;
@@ -207,8 +209,13 @@
     background-color: white;
     padding: 10px;
     border-radius: 15px;
+    width: auto;
     display: flex;
     flex-direction: column;
+  }
+  .menu .detailed-menu-container .inner-container .menu-subdiv .menu-item:hover {
+    animation-duration: 5s;
+    animation-name: animtest;
   }
   .menu .detailed-menu-container .inner-container .menu-subdiv .menu-item .item-name {
     font-weight: bold;
@@ -276,6 +283,14 @@
 /*----------------------------------GENERAL XFORMS--------------------------------*/
 .spacing-div {
   margin-top: 10px;
+}
+
+/*------------------------------------KEYFRAMES----------------------------------*/
+@keyframes animtest {
+  to {
+    width: 70%;
+    border-radius: 15px 0px 0px 15px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

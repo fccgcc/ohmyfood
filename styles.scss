@@ -16,6 +16,8 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
     font-family: 'Roboto';
     src: url("fonts.googleapis.com/css?family=Roboto") format('truetype');
 }
+
+
 @media screen and (max-width : 768px) {
     @mixin horizontal-flexbox {
         display: flex;
@@ -196,12 +198,13 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
                     }
                 }
 
-                .menu-subdiv-text{}
+                .menu-subdiv-text{}      //fixed underline length
                 .menu-subdiv-text:after{
                     content: ""; display: block; width: 20%; border-bottom: solid 5px; 
                     border-color: $ternary-color;
                 }
-                .menu-subdiv{
+
+                .menu-subdiv{   /*TODO*/   /*utiliser pseudo-classes et structure de controle pour afficher croix verte */
                     @include vertical-flexbox();
                     margin-top: 5px;
                     row-gap: 5px;
@@ -209,7 +212,12 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
                         background-color: white;
                         padding: 10px;
                         border-radius: 15px;
+                        width: auto;
                         @include vertical-flexbox();
+                        &:hover{
+                            animation-duration: 5s;
+                            animation-name: animtest;
+                        }
                         .item-name{
                             font-weight: bold;
                         }
@@ -218,6 +226,8 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
                             justify-content: space-between;
                         }
                     }
+                   
+                    
 
                 }
                 .btn{
@@ -285,3 +295,15 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
 .spacing-div{
     margin-top: 10px;
 }
+
+/*------------------------------------KEYFRAMES----------------------------------*/
+@keyframes animtest {
+    from {
+        
+    }
+  
+    to {
+        width: 70%;
+        border-radius: 15px 0px 0px 15px;
+    }
+  }
