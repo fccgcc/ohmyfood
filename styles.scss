@@ -17,7 +17,6 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
     src: url("fonts.googleapis.com/css?family=Roboto") format('truetype');
 }
 
-
 @media screen and (max-width : 768px) {
     @mixin horizontal-flexbox {
         display: flex;
@@ -43,7 +42,7 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
             background-repeat: no-repeat;
             background-image :url($logo-img) ;
             background-size: contain;
-            width:20%;
+            width:30%;
         }
         .back-arrow{
             position: absolute;
@@ -209,25 +208,48 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
                 }
 
                 .menu-subdiv{   /*TODO*/   /*utiliser pseudo-classes et structure de controle pour afficher croix verte */
-                    @include vertical-flexbox();
+                    @include horizontal-flexbox();
                     margin-top: 5px;
                     row-gap: 5px;
                     .menu-item{
+                        @include vertical-flexbox();
                         background-color: white;
                         padding: 10px;
                         border-radius: 15px;
-                        width: auto;
-                        @include vertical-flexbox();
-                        &:hover{
-                            animation-duration: 5s;
-                            animation-name: animtest;
+                        width: 100%; opacity: 0;
+                        animation-name: fadein;
+                        animation-duration: 2s;
+                        animation-fill-mode: forwards;
+                        &:hover {
+                            width: 70%;
+                            transition-duration: 1s;
                         }
+                        &:hover + .animated{
+                            
+                            display: flex;
+                            width: 30%;
+                            transition-duration: 1s;
+                            background-color: darkgreen;
+                        }
+                       
                         .item-name{
                             font-weight: bold;
                         }
                         .item-desc{
                             @include horizontal-flexbox();
                             justify-content: space-between;
+                        }
+                    }
+                    .animated{
+                        display: none;
+                        width: 0%;
+            
+                       
+                        & > i  {
+                          animation-name: rotation;
+                          animation-duration: 1s;
+            
+                          margin: auto;
                         }
                     }
                    
@@ -250,7 +272,7 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
             }            
        }
     }
-    
+
     .footer{
         @include vertical-flexbox();
         height: 200px;
@@ -486,14 +508,18 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
                     row-gap: 5px;
                     .menu-item{
                         background-color: white;
+                        background-color: white;
                         padding: 10px;
                         border-radius: 15px;
-                        width: auto;
+                        width: auto; opacity: 0;
+                        animation-name: fadein;
+                        animation-duration: 2s;
+                        animation-fill-mode: forwards;
                         @include vertical-flexbox();
-                        &:hover{
-                            animation-duration: 5s;
-                            animation-name: animtest;
-                        }
+                        // &:hover{
+                        //     animation-duration: 5s;
+                        //     animation-name: animtest;
+                        // }
                         .item-name{
                             font-weight: bold;
                         }
@@ -582,5 +608,18 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
     to {
         width: 70%;
         border-radius: 15px 0px 0px 15px;
+    }
+  }
+
+  
+@keyframes fadein { 
+    from {
+      margin-bottom: 20px;
+      
+    }
+  
+    to {
+      margin-bottom: 0px;
+      opacity: 1;
     }
   }
