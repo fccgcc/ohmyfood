@@ -7,6 +7,8 @@ $image-1: "./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg";
 $image-2:"./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg";
 $image-3:"./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg";
 $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
+$loading-spinner:"./images/loading_spinner.jpg";
+
 /*-------------------------------FONTS---------------------------*/
 @font-face {
     font-family: 'Shrikhand';
@@ -142,7 +144,9 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
                 .menu-img{
                     background-size: cover; background-repeat: no-repeat;
                     height: 200px;
-                    border-radius: 30px 30px 0px 0px  ;
+                    border-radius: 30px 30px 0px 0px;
+                    animation: loadingSpinnertoImage 4s infinite;
+                    animation-fill-mode: forwards;
                 }
 
                 .description-container{
@@ -223,6 +227,7 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
                         &:hover {
                             width: 70%;
                             transition-duration: 1s;
+                            border-radius: 15px 0px 0px 15px  ;
                         }
                         &:hover + .animated{
                             
@@ -230,6 +235,7 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
                             width: 30%;
                             transition-duration: 1s;
                             background-color: darkgreen;
+                            border-radius: 0px 15px 15px 0px  ;
                         }
                        
                         .item-name{
@@ -243,8 +249,6 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
                     .animated{
                         display: none;
                         width: 0%;
-            
-                       
                         & > i  {
                           animation-name: rotation;
                           animation-duration: 1s;
@@ -252,10 +256,10 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
                           margin: auto;
                         }
                     }
-                   
-                    
-
+    
                 }
+               
+
                 .btn{
                     @include button-properties();
                     width: 100px;
@@ -428,7 +432,8 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
             margin-left: 20px;  margin-right: 20px;
             column-gap: 20px;
             row-gap: 20px;
-            justify-content: space-between;
+            justify-content:  space-evenly;
+            align-items: flex-start;
             flex-wrap: wrap;
             .menu-card{
                 @include vertical-flexbox();
@@ -503,29 +508,50 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
                 }
 
                 .menu-subdiv{   /*TODO*/   /*utiliser pseudo-classes et structure de controle pour afficher croix verte */
-                    @include vertical-flexbox();
+                    @include horizontal-flexbox();
                     margin-top: 5px;
                     row-gap: 5px;
+                    width: 300px;
                     .menu-item{
                         background-color: white;
                         background-color: white;
                         padding: 10px;
                         border-radius: 15px;
-                        width: auto; opacity: 0;
+                        width: 300px; opacity: 0;
                         animation-name: fadein;
                         animation-duration: 2s;
                         animation-fill-mode: forwards;
                         @include vertical-flexbox();
-                        // &:hover{
-                        //     animation-duration: 5s;
-                        //     animation-name: animtest;
-                        // }
+
+                        &:hover {
+                            width: 200px;
+                            transition-duration: 1s;
+                            border-radius: 15px 0px 0px 15px  ;
+                        }
+                        &:hover + .animated{
+                            
+                            display: flex;
+                            width: 100px;
+                            transition-duration: 1s;
+                            background-color: darkgreen;
+                            border-radius: 0px 15px 15px 0px  ;
+                        }
                         .item-name{
                             font-weight: bold;
                         }
                         .item-desc{
                             @include horizontal-flexbox();
                             justify-content: space-between;
+                        }
+                    }
+                    .animated{
+                        display: none;
+                        width: 0%;
+                        & > i  {
+                          animation-name: rotation;
+                          animation-duration: 1s;
+            
+                          margin: auto;
                         }
                     }
                    
@@ -622,4 +648,24 @@ $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
       margin-bottom: 0px;
       opacity: 1;
     }
+  }
+
+@keyframes loadingSpinnertoImage { 
+    0%{
+        background-image: url($loading-spinner);
+    }
+    10%{
+        background-image: url($image-1);
+    }
+
+
+    // 0%,100%  {background-color: violet;}
+    // 25%     {background-color: black;}
+    // 50%     {background-color: blue;}
+    // 75%     {background-color: white;}   
+
+    //    0%,100%  {background-image: url($image-1);}
+//    25% {background-image: url($image-2);}
+//    50% {background-image: url($image-3);}
+//    75% {background-image: url($image-4);}
   }
