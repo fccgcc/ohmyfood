@@ -9,6 +9,38 @@ $image-3:"./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg";
 $image-4:"./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg";
 $loading-spinner:"./images/loading_spinner.jpg";
 
+.loading-screen{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 5;
+    opacity: 1;
+    background-color: white;
+    animation: loader 2s forwards;
+    justify-content: center;
+    align-items: center;
+
+    .loader__circle {
+        
+        width: 200px;
+        height: 200px;
+        border: 5px solid transparent;
+        border-radius: 50%;
+        border-left-color: #9356DC;
+        border-right-color: #FF79DA;
+        animation: loader-circle 1.5s linear infinite;
+      }
+
+    .loading-spinner{
+        margin: auto;
+        background-image: url("./images/loading_spinner.jpg");
+        height: 200px;
+        width: 200px;
+        z-index: 6;
+    }
+}
+
 /*-------------------------------FONTS---------------------------*/
 @font-face {
     font-family: 'Shrikhand';
@@ -34,7 +66,7 @@ $loading-spinner:"./images/loading_spinner.jpg";
         border-radius: 20px;
         font-size: 125%;
     }
-
+    
     .head-container{
         @include horizontal-flexbox();
         height: 70px;
@@ -364,6 +396,8 @@ $loading-spinner:"./images/loading_spinner.jpg";
         font-size: 125%;
     }
 
+    
+
     .head-container{
         @include horizontal-flexbox();
         height: 70px;
@@ -514,27 +548,38 @@ $loading-spinner:"./images/loading_spinner.jpg";
 
     /*-------------------------------MENU-SPECIFIC CSS---------------------------*/
     .menu{
+        // display: flex;
+        // flex-direction: row;
+        // justify-content: center;
         .menu-img{
             background-size: cover; background-repeat: no-repeat;
             height: 200px
         }
         .detailed-menu-container{
-            margin-top: -40px;
+            // margin-top: -40px;
             background-color: lightgray;
             border-radius: 40px 40px 0px 0px;
+            margin-left: 30%;
+            
             height:auto;
+            width: 40%;
 
             .inner-container{ 
                 @include vertical-flexbox();
                 margin-left: 10px;
                 margin-right: 10px;
+               
+                align-items: center;
+                
                 .menu-head-container{
                     justify-content: space-between;
                     border-radius: 0px 0px 30px 30px ;
                     margin-bottom: 20px;
+                    
                     .menu-name{
                         font-size: 150%;font-weight: bold;
                         margin-top: 25px;
+                        
                     }
                     .heart-icon{
                         margin-top: 30px; margin-right:30px
@@ -705,7 +750,26 @@ $loading-spinner:"./images/loading_spinner.jpg";
     }
   }
 
-  
+@keyframes loader {
+    0%,95%{
+        opacity: 1;
+        z-index: 1;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes loader-circle{
+    0%{
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
 @keyframes fadein { 
     from {
       margin-bottom: 20px;
